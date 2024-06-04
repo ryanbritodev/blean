@@ -1,0 +1,10 @@
+document.getElementById('loginButton').addEventListener('click', function() {
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    if (email === 'fiap@fiap.com' && password === 'fiap123') {
+        alert('Login efetuado');
+    } else {
+        alert('Usuário não encontrado');
+    }
+});
