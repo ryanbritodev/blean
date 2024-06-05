@@ -6,5 +6,6 @@ loginButton.addEventListener("click", () => {
         alert('Login efetuado');
     } else {
         alert('Usuário não encontrado');
+        alert('Para logar, use o email: fiap@fiap.com e a senha: fiap123')
     }
   })
