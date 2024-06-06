@@ -1,3 +1,5 @@
+# https://www.tinkercad.com/things/bpBPSg0CR12-global-solution-blue-future?sharecode=dSe2dT_8u7aOaHaq_syi8ARMs1yMeOMUJQOMnTItNps
+
 from tensorflow.keras.models import load_model
 import numpy as np
 import cv2
