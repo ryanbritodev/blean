@@ -40,16 +40,20 @@ O sistema de **detecção de microplásticos** na água se baseia em três compo
   - **Display LCD:** Exibe o resultado da análise.
   - **LEDs:** Indicam a presença de microplásticos (verde, amarelo, vermelho).
 
+<div align="center">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTA-RyG4DlcRjYky84Phm6JgFlbxKVU22V3Kg&s" width="50%" alt="Arduino">
+</div>
+
 ## Implementação do nosso Projeto (Passo a Passo)
 
 ### Passo a Passo para Instalar o TensorFlow com Suporte a GPU no Windows (em 2024)
 ### Pré-requisitos:
 - **GPU compatível:** Sua placa gráfica deve ter uma capacidade de computação superior a 3.5 e suportar CUDA 11.2. Você pode verificar isso usando o comando **_nvidia-smi_** no prompt de comando. Verifique se a capacidade de computação é superior a 3.5 e se a versão do CUDA é compatível.
 - **Sistema operacional:** Windows 11
-- **Python:** Versão 3.7 a 3.9
+- **Python:** Versão 3.7.1 a 3.9.1
 
 <div align="center">
-  <img src="https://t.ctcdn.com.br/lIY0p5a0Nn-WIF7ESKVI2hbORXc=/i490037.jpeg" width="40%">
+  <img src="https://s3.amazonaws.com/cms.ipressroom.com/219/files/20149/544a0d86f6091d6699000060_NVLogo_2D/NVLogo_2D_thmb.jpg" width="60%" alt="Logo NVIDIA">
 </div>
   
 ## Instale os drivers NVIDIA:
@@ -60,45 +64,53 @@ O sistema de **detecção de microplásticos** na água se baseia em três compo
 - Baixe e instale o **Python 3.9.1** no site do [Python](https://www.python.org/downloads/release/python-390/)
 
 ## Configure as variáveis de ambiente:
-- Adicione os diretórios do **CUDA**, **TensorRT e **Python** ao %path% do seu sistema.
+- Adicione os diretórios do **CUDA**, **TensorRT** e **Python** ao %path% do seu sistema.
 - Consulte a documentação do **CUDA** e do **TensorRT** para obter instruções sobre como configurar as variáveis de ambiente.
 
-
-## Crie um ambiente virtual:
+## Criando um ambiente virtual:
 - Crie um ambiente virtual usando o comando **_virtualenv_** no prompt de comando.
 - Ative o ambiente virtual usando o comando **_activate_**.
 - Instale o TensorFlow com suporte a **GPU** usando o comando **_pip install tensorflow-gpu==2.10_**
 
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/41811634/108357975-e689f500-71cc-11eb-9df2-fea776366202.png" width="60%" alt="Logo NVIDIA">
+</div>
+
 ## Referências:
-- Vídeo de instrução: How to install TensorFlow with GPU support in 2024? | ONLY method that works | Techy Man's Solutions
-- Documentação do TensorFlow: https://www.tensorflow.org/api_docs
-- Documentação do CUDA: https://docs.nvidia.com/cuda/
-- Documentação do TensorRT: https://docs.nvidia.com/deeplearning/tensorrt/
+- **Vídeo de instrução:** [How to install TensorFlow with GPU support in 2024? | ONLY method that works | Techy Man's Solutions](https://www.youtube.com/watch?v=trLpdJnsxco&t=318s)
+- **Documentação do TensorFlow:** https://www.tensorflow.org/api_docs
+- **Documentação do CUDA:** https://docs.nvidia.com/cuda/
+- **Documentação do TensorRT:** https://docs.nvidia.com/deeplearning/tensorrt/
 
 ### 1. Treinamento do Modelo com Teachable Machine
 
 1.1 **Acessando o Teachable Machine**
-   - Acesse o Google Teachable Machine através do [link](https://teachablemachine.withgoogle.com/).
+   - Acesse o **Google Teachable Machine** através do [link](https://teachablemachine.withgoogle.com/).
 
 1.2 **Criando um Modelo de Imagem**
    - **Definição de Classes:** Identifique as diferentes categorias de microplásticos que deseja reconhecer no seu sistema.
    - **Adição de Imagens:** Carregue imagens de cada classe criada.
 
+<br>
+
+<div align="center">
+  <img src="https://teachablemachine.withgoogle.com/assets/img/contentpage/home/2017-version.jpg" width="60%" alt="Logo NVIDIA">
+</div>
+
+<br>
+
 1.3 **Treinamento do Modelo**
-   - Clique no botão "Treinar modelo".
+   - Clique no botão **"Treinar modelo"**.
 
 1.4 **Exportação do Modelo**
    - Exporte o modelo em formato **.h5** e copie o código utilizando a biblioteca do **TensorFlow**.
 
 ### 2. Configuração do Software
 
-2.1 **Instalação do Python**
-   - Baixe e instale o Python 3.10 através do [site oficial](https://www.python.org/downloads/).
-
-2.2 **Modificação do Código Python**
+2.1 **Modificação do Código Python**
    - Realize as seguintes alterações no arquivo "TeachableMachineaArduino.py":
-     - Definição da Porta COM.
-     - Substituição dos Nomes das Classes.
+     - Definição da **Porta COM**.
+     - Substituição dos **Nomes das Classes** (labels.txt).
      - Ajuste da Precisão (opcional).
 
 ### 3. Execução do Sistema
@@ -113,6 +125,10 @@ O sistema de **detecção de microplásticos** na água se baseia em três compo
 
 4.1 **Abertura do IDE do Arduino**
    - Instale e abra o Arduino IDE, a interface de desenvolvimento.
+
+<div align="center">
+  <img src="https://www.datocms-assets.com/76605/1659348717-software-arduino-pro-ide.png" width="60%" alt="Logo NVIDIA">
+</div>
 
 4.2 **Carregamento do Código**
    - Abra o arquivo "ArduinoProgram.ino" no Arduino IDE e carregue-o na placa Arduino conectada.
@@ -136,15 +152,7 @@ O sistema de detecção de microplásticos na água demonstra o potencial da tec
 
 Além da detecção de microplásticos, o sistema pode ser adaptado para identificar outros tipos de poluentes ou objetos em diferentes contextos ambientais.
 
-### Próximos Passos:
-
-- Aperfeiçoar a precisão da detecção.
-- Desenvolver um sistema portátil.
-- Integrar o sistema a plataformas de monitoramento ambiental.
-
-## Recursos Adicionais
-
-- Repositório Git (código Python e Arduino): [link](link_do_repositório).
+## Referências
 - [Teachable Machine](https://teachablemachine.withgoogle.com/)
 - [Documentação Python](https://docs.python.org/)
 - [Documentação Arduino](https://docs.arduino.cc/)
@@ -153,4 +161,4 @@ Além da detecção de microplásticos, o sistema pode ser adaptado para identif
 
 Este guia fornece uma visão geral do sistema de detecção de microplásticos na água utilizando visão computacional e Arduino. A implementação deste sistema requer conhecimentos básicos de programação em Python e Arduino. O uso de componentes relativamente simples e acessíveis torna este projeto uma ferramenta viável para o monitoramento ambiental participativo e o desenvolvimento de soluções inovadoras para a preservação dos recursos hídricos.
 
-**Observação:** Este guia foi criado com base em informações disponíveis e pode ser adaptado às suas necessidades específicas. É recomendável consultar especialistas em visão computacional e Arduino para garantir a implementação adequada do sistema.
+**Observação:** Este guia foi criado com base em informações disponíveis e pode ser adaptado às suas necessidades específicas.
