@@ -11,7 +11,7 @@ const slideShowContent = [
       "1. Entre em contato conosco para conseguir seu equipamento Blean. Mande uma mensagem para o email 'blean@contato.com', ou uma mensagem para '+55 (11)99999-9999",
   },
   {
-    source: "/assets/videos/arduino.mp4", // for some reason it doesn't work with dynamic path ('./')
+    source: "../../../assets/videos/arduino.mp4", // for some reason it doesn't work with dynamic path ('./')
     content:
       "2. Use o equipamento para análise da água, por exemplo, como mostrado no vídeo",
   },
