@@ -39,19 +39,32 @@ app.post("/analytics", async (req, res) => {
   const { email, totalComponents, percentualMicroplastic, quantityTests } =
     req.body;
 
-  console.log(req.body)
-
-  if (email && totalComponents && percentualMicroplastic && quantityTests) {
-    return res.status(200).json(
-      await Analytics.create({
-        email: email.toLowerCase(),
-        totalComponents: totalComponents,
-        percentualMicroplastic: percentualMicroplastic,
-        quantityTests: quantityTests,
-      })
+  if (email) {
+    const analytics = await Analytics.findOneAndUpdate(
+      { email: email },
+      { email, totalComponents, percentualMicroplastic, quantityTests }
     );
-  } else {
-    return res.status(400).json({ Error: "Bad Request" });
+
+    if (
+      analytics === null &&
+      email &&
+      totalComponents &&
+      percentualMicroplastic &&
+      quantityTests
+    ) {
+      return res.status(200).json(
+        await Analytics.create({
+          email: email.toLowerCase(),
+          totalComponents: totalComponents,
+          percentualMicroplastic: percentualMicroplastic,
+          quantityTests: quantityTests,
+        })
+      );
+    } else if (analytics !== null) {
+      return res.status(200).json(await Analytics.findOne({ email: email }));
+    } else {
+      return res.status(400).json({ Error: "Bad Request" });
+    }
   }
 });
 
