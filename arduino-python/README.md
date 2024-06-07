@@ -12,6 +12,8 @@ O aumento da contaminação por **microplásticos** em peixes e humanos represen
 
 O sistema baseia-se na utilização do **[Google Teachable Machine](https://teachablemachine.withgoogle.com/)** para o treinamento de um modelo capaz de identificar microplásticos em imagens capturadas por uma câmera. **O Google Teachable Machine** é uma ferramenta desenvolvida pelo Google que simplifica o processo de treinamento de modelos de **machine learning**, especialmente para tarefas de classificação de imagens. Além disso, usamos uma API em NodeJS (criada por nós), para que ocorra o trânsito das informações adquiridas após o processo do Arduino + IA para localizar e quantificar os microplásticos (a API pode ser encontrada no diretório _**/backend**_, considerando o caminho root), esses dados são salvos em um banco NoSQL (MongoDB), e assim tanto o Website (Front-End), quanto o Arduino (com o Python) conseguem usar a API para salvar e resgatar os dados.
 
+<br>
+
 <div align="center">
 <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Microplastic.jpg" alt="Imagem de Microplásticos na Água" width="50%"> <img src="https://i.ytimg.com/an/T2qQGqZxkD0/0f04f0b2-a39a-4621-8bb5-1f5f7bf9bf10_mq.jpg?v=5dc445a2" alt="Imagem de Microplásticos na Água" width="32.9%">
 </div>
