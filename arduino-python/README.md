@@ -1,4 +1,4 @@
-# Blean: Sistema de Detecção de Microplásticos na Água
+# BLEAN: Sistema de Detecção de Microplásticos na Água
 **AUTORES:**
 - Diogo Leles Franciulli RM558487
 - Felipe Sousa de Oliveira RM559085
