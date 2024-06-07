@@ -45,19 +45,15 @@ app.post("/analytics", async (req, res) => {
       { email, totalComponents, percentualMicroplastic, quantityTests }
     );
 
-    if (
-      analytics === null &&
-      email &&
-      totalComponents &&
-      percentualMicroplastic &&
-      quantityTests
-    ) {
+    if (analytics === null) {
       return res.status(200).json(
         await Analytics.create({
           email: email.toLowerCase(),
-          totalComponents: totalComponents,
-          percentualMicroplastic: percentualMicroplastic,
-          quantityTests: quantityTests,
+          totalComponents: totalComponents ? totalComponents : "0",
+          percentualMicroplastic: percentualMicroplastic
+            ? percentualMicroplastic
+            : "0%",
+          quantityTests: quantityTests ? quantityTests : "0",
         })
       );
     } else if (analytics !== null) {
