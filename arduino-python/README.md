@@ -1,14 +1,8 @@
-### README para Edge e Python da GS Blue Future (FIAP) - Já que ambos estão entrelaçados neste projeto
-
-# Sistema de Detecção de Microplásticos na Água
-
-## Veja o website Blean em funcionamento
-
-[Blean - For Our Oceans to Be Clean with Blean](https://ryanbritodev.github.io/blean)
-
-## Veja o protótipo e funcionamento do arduino no Tinkercad
-
-[Blean - For Our Oceans to Be Clean with Blean](https://www.tinkercad.com/things/bpBPSg0CR12-global-solution-blue-future?sharecode=dSe2dT_8u7aOaHaq_syi8ARMs1yMeOMUJQOMnTItNps)
+# BLEAN: Sistema de Detecção de Microplásticos na Água
+**AUTORES:**
+- Diogo Leles Franciulli RM558487
+- Felipe Sousa de Oliveira RM559085
+- Ryan Brito Pereira Ramos RM554497
 
 ## Contexto e Motivação
 
@@ -16,7 +10,9 @@ O aumento da contaminação por **microplásticos** em peixes e humanos represen
 
 ## Nosso projeto
 
-O sistema baseia-se na utilização do **[Google Teachable Machine](https://teachablemachine.withgoogle.com/)** para o treinamento de um modelo capaz de identificar microplásticos em imagens capturadas por uma câmera. **O Google Teachable Machine** é uma ferramenta desenvolvida pelo Google que simplifica o processo de treinamento de modelos de **machine learning**, especialmente para tarefas de classificação de imagens. Além disso, usamos uma API em NodeJS (criada por nós), para que ocorra o trânsito das informações adquiridas após o processo do Arduino + IA para localizar e quantificar os microplásticos (a api pode ser encontrada no diretório /backend, considerando o caminho root), esses dados são salvos em um banco NoSQL (MongoDB), e assim tanto o website (frontend), quanto o arduino (com o python) conseguem usar a API para salvar e resgatar os dados.
+O sistema baseia-se na utilização do **[Google Teachable Machine](https://teachablemachine.withgoogle.com/)** para o treinamento de um modelo capaz de identificar microplásticos em imagens capturadas por uma câmera. **O Google Teachable Machine** é uma ferramenta desenvolvida pelo Google que simplifica o processo de treinamento de modelos de **machine learning**, especialmente para tarefas de classificação de imagens. Além disso, usamos uma API em NodeJS (criada por nós), para que ocorra o trânsito das informações adquiridas após o processo do Arduino + IA para localizar e quantificar os microplásticos (a API pode ser encontrada no diretório _**/backend**_, considerando o caminho root), esses dados são salvos em um banco NoSQL (MongoDB), e assim tanto o Website (Front-End), quanto o Arduino (com o Python) conseguem usar a API para salvar e resgatar os dados.
+
+<br>
 
 <div align="center">
 <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Microplastic.jpg" alt="Imagem de Microplásticos na Água" width="50%"> <img src="https://i.ytimg.com/an/T2qQGqZxkD0/0f04f0b2-a39a-4621-8bb5-1f5f7bf9bf10_mq.jpg?v=5dc445a2" alt="Imagem de Microplásticos na Água" width="32.9%">
@@ -57,14 +53,14 @@ O sistema de **detecção de microplásticos** na água se baseia em alguns comp
 
 ## Implementação do nosso Projeto (Passo a Passo)
 
+### É necessário fazer algo em relação a API?
+
+- A API está hospedada e funcionando, os caminhos da aplicação estão conectadas na API hospedada, logo, o trabalho máximo em relação a isso seria esperar a API ligar (50 segundos), em caso de standby do server em que ela está hospedada
+- Porém, caso queira rodar a API localmente:
+  - Entre na pasta _**/backend**_ e rode o comando "npm install" para instalar os pacotes do package.json (para rodar o comando, tenha o **npm** instalado em seu computador, faça o download pelo site do [Node](https://nodejs.org/en));
+  - Após instalar os pacotes, use "npm run dev" para deixar a API rodando localmente na porta 3001, agora já é possível usar a API localmente, testando com Postman, ou colocando a URL local onde você quiser testar (frontend ou arduino/python).
+
 ### Passo a Passo para Instalar o TensorFlow com Suporte a GPU no Windows (em 2024)
-
-### É necessário fazer algo em relação a api?
-
-- A api está hospedada e funcionando, os caminhos da aplicação estão conectadas na api hospedada, logo, o trabalho máximo em relação a isso seria esperar a api ligar (50 segundos), em caso de standby do server em que ela está hospedada
-- Porém, caso queira rodar a api localmente:
-  - Entre na pasta /backend e rode o comando "npm install" para instalar os pacotes do package.json (para rodar o comando, tenha o **npm** instalado em seu computador, faça o download pelo site do [Node](https://nodejs.org/en));
-  - Após instalar os pacotes, use "npm run dev" para deixar a api rodando localmente na porta 3001, agora já é possível usar a api localmente, testando com Postman, ou colocando a URL local onde você quiser testar (frontend ou arduino/python).
 
 ### Pré-requisitos:
 
@@ -182,7 +178,12 @@ O sistema de detecção de microplásticos na água demonstra o potencial da tec
 - Avaliação da qualidade da água.
 - Desenvolvimento de estratégias de mitigação da poluição por microplásticos.
 
-Além da detecção de microplásticos, o sistema pode ser adaptado para identificar outros tipos de poluentes ou objetos em diferentes contextos ambientais.
+Além da detecção de microplásticos, o sistema pode ser adaptado para identificar outros tipos de poluentes ou objetos em diferentes contextos ambientais
+
+## Acesse o website **Blean** e a simulação do nosso protótipo em feito com **Arduino**:
+
+- [Blean - For Our Oceans to Be Clean with Blean](https://ryanbritodev.github.io/blean)
+- [Simulador Tinkercad](https://www.tinkercad.com/things/bpBPSg0CR12-global-solution-blue-future?sharecode=dSe2dT_8u7aOaHaq_syi8ARMs1yMeOMUJQOMnTItNps)
 
 ## Referências
 
@@ -195,3 +196,6 @@ Além da detecção de microplásticos, o sistema pode ser adaptado para identif
 Este guia fornece uma visão geral do sistema de detecção de microplásticos na água utilizando visão computacional e Arduino. A implementação deste sistema requer conhecimentos básicos de programação em Python e Arduino. O uso de componentes relativamente simples e acessíveis torna este projeto uma ferramenta viável para o monitoramento ambiental participativo e o desenvolvimento de soluções inovadoras para a preservação dos recursos hídricos.
 
 **Observação:** Este guia foi criado com base em informações disponíveis e pode ser adaptado às suas necessidades específicas.
+
+### README.md feito paras as matérias de Edge Computing & Computer Systems e Computational Thinking with Python para Global Solution - Blue Future (FIAP 2024) 
+(Já que ambos estão entrelaçados neste projeto)
